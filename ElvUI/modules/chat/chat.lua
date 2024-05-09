@@ -863,6 +863,26 @@ function CH:ChatFrame_MessageEventHandler(self, event, arg1, arg2, arg3, arg4, a
 			else
 				self:AddMessage(format(globalstring, arg4, arg2), info.r, info.g, info.b, info.id, isHistory, historyTime)
 			end
+
+
+ 
+				--- Add WHISPER in chat
+		elseif type == "WHISPER" then
+			local sender, message = arg2, arg1
+			local senderLink = format("|Hplayer:%s:%s|h[%s]|h", arg2, arg11 or "", arg2)
+			local coloredSender = coloredName
+			
+			if sender == UnitName("player") then
+				-- Мы шепчем кому-то другому
+				self:AddMessage(format("Вы шепчете %s: %s", senderLink, message), info.r, info.g, info.b, info.id, isHistory, historyTime)
+			else
+				-- Мы получаем шепот
+				self:AddMessage(format("%s шепчет вам: %s", "["..coloredName.."]", message), info.r, info.g, info.b, info.id, isHistory, historyTime)
+			end
+
+
+
+
 		elseif type == "CHANNEL_NOTICE" then
 			local globalstring = _G["CHAT_"..arg1.."_NOTICE"]
 			if arg10 > 0 then

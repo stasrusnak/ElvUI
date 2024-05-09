@@ -6,6 +6,9 @@ It completely replaces the default Blizzard UI at every level with a new and bet
 As such, you'll only ever have to update ElvUI and not worry too much about its individual components.
 This UI will arrange your interface to be more flexible and practical.
 
+
+Add boss text 
+
 ## Screenshots:
 
 <img src="https://cloud.githubusercontent.com/assets/590348/22867052/f8d570ba-f190-11e6-9e4c-aee3adc16154.jpg" align="right" width="48.5%">
