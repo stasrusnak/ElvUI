@@ -615,3 +615,20 @@ ElvUF.Tags.Methods["target"] = function(unit)
 	local targetName = UnitName(unit.."target")
 	return targetName or nil
 end
+
+
+ElvUF.Tags.Events["isboss"] = "UNIT_CLASSIFICATION_CHANGED UNIT_LEVEL PLAYER_LEVEL_UP" 
+
+ElvUF.Tags.Methods["isboss"] = function(unit)
+    local classification = UnitClassification(unit)
+    if classification == "elite" or classification == "rareelite" or UnitLevel(unit) == -1 then
+        return "elite"
+    elseif classification == "worldboss" or classification == "rare" then
+        return "boss"
+    else
+        return ""
+    end
+end
+
+
+ 
