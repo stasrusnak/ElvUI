@@ -866,21 +866,18 @@ function CH:ChatFrame_MessageEventHandler(self, event, arg1, arg2, arg3, arg4, a
 
  
 
-		elseif type == "WHISPER" then
-			local sender, message = arg2, arg1
-			local senderLink = format("|Hplayer:%s:%s|h[%s]|h", arg2, arg11 or "", arg2)
-			local coloredSender = coloredName
+		-- elseif type == "WHISPER" then
+		-- 	local sender, message = arg2, arg1
+		-- 	local senderLink = format("|Hplayer:%s:%s|h[%s]|h", arg2, arg11 or "", arg2)
+		-- 	local coloredSender = coloredName
 			
-			if sender == UnitName("player") then
-				-- Мы шепчем кому-то другому
-				self:AddMessage(format("Вы шепчете %s: %s", senderLink, message), info.r, info.g, info.b, info.id, isHistory, historyTime)
-			else
-				-- Мы получаем шепот
-				self:AddMessage(format("%s шепчет вам: %s", "["..coloredName.."]", message), info.r, info.g, info.b, info.id, isHistory, historyTime)
-			end
-
-
-
+		-- 	if sender == UnitName("player") then
+		-- 		-- Мы шепчем кому-то другому
+		-- 		self:AddMessage(format("Вы шепчете %s: %s", senderLink, message), info.r, info.g, info.b, info.id, isHistory, historyTime)
+		-- 	else
+		-- 		-- Мы получаем шепот
+		-- 		self:AddMessage(format("%s шепчет вам: %s", "["..coloredName.."]", message), info.r, info.g, info.b, info.id, isHistory, historyTime)
+		-- 	end
  
 
 
